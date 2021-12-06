@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FileSaveView_macOS: View {
-    @Binding var image: NSImage?
+    let image: NSImage?
     
     var body: some View {
         Button("Save Image") {
@@ -16,6 +16,7 @@ struct FileSaveView_macOS: View {
             let panel = NSSavePanel()
             panel.canCreateDirectories = true
             panel.directoryURL = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first!
+            panel.nameFieldStringValue = "LegoArtImage.png"
             panel.isExtensionHidden = true
             if panel.runModal() == .OK, let url = panel.url {
                 self.saveImage(image, url)
@@ -40,6 +41,6 @@ struct FileSaveView_macOS_Previews: PreviewProvider {
     @State static var image: NSImage? = nil
     
     static var previews: some View {
-        FileSaveView_macOS(image: $image)
+        FileSaveView_macOS(image: image)
     }
 }
