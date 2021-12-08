@@ -16,6 +16,12 @@ struct ContentView: View {
     @State var studTypeSelection: Int = 0
     @State var maxStudSelection: Int = 2
     
+#if os(iOS)
+    @State var filteredImage: UIImage? = nil
+#elseif os(macOS)
+    @State var filteredImage: NSImage? = nil
+#endif
+    
     var body: some View {
         VStack {
             title
@@ -27,8 +33,12 @@ struct ContentView: View {
                 .resizable()
                 .scaledToFit()
                 .padding(16)
-            selectButton
-                .padding(.bottom, 16)
+            HStack {
+                selectButton
+                saveButton
+                    .disabled(filteredImage == nil)
+            }
+            .padding(.bottom, 16)
 #if os(iOS)
             VStack(alignment: .leading) {
                 Text("Stud Type:")
@@ -80,6 +90,9 @@ struct ContentView: View {
         else {
             return nil
         }
+        DispatchQueue.main.async {
+            self.filteredImage = legoUIImage
+        }
         return Image(uiImage: legoUIImage)
 #elseif os(macOS)
         guard let nsImage = NSImage(contentsOf: url),
@@ -87,6 +100,9 @@ struct ContentView: View {
               let legoNSImage = legoArt.exportNSImage()
         else {
             return nil
+        }
+        DispatchQueue.main.async {
+            self.filteredImage = legoNSImage
         }
         return Image(nsImage: legoNSImage)
 #endif
@@ -97,6 +113,14 @@ struct ContentView: View {
         FileSelectView_iOS(contentURL: $contentURL)
 #elseif os(macOS)
         FileSelectView_macOS(contentURL: $contentURL)
+#endif
+    }
+    
+    var saveButton: some View {
+#if os(iOS)
+        EmptyView() // save to photo library?
+#elseif os(macOS)
+        FileSaveView_macOS(image: filteredImage)
 #endif
     }
     

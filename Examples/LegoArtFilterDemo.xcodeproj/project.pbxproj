@@ -16,6 +16,7 @@
 		1CC2EE3C27147FB4007D63F5 /* FileSelectView_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC2EE3B27147FB4007D63F5 /* FileSelectView_macOS.swift */; };
 		1CC2EE3F271480D7007D63F5 /* FileChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC2EE3D271480D4007D63F5 /* FileChooser.swift */; };
 		1CC2EE40271480DC007D63F5 /* FileSelectView_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC2EE3927147F8D007D63F5 /* FileSelectView_iOS.swift */; };
+		36E935A9275E3D70000F1586 /* FileSaveView_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDC15B7271B093D000A4BF7 /* FileSaveView_macOS.swift */; };
 		798D047F271D815200B2E10A /* LegoArtFilter in Frameworks */ = {isa = PBXBuildFile; productRef = 798D047E271D815200B2E10A /* LegoArtFilter */; };
 		798D0481271D819200B2E10A /* LegoArtFilter in Frameworks */ = {isa = PBXBuildFile; productRef = 798D0480271D819200B2E10A /* LegoArtFilter */; };
 /* End PBXBuildFile section */
@@ -242,6 +243,7 @@
 				1CC2EE242714639F007D63F5 /* ContentView.swift in Sources */,
 				1CC2EE3C27147FB4007D63F5 /* FileSelectView_macOS.swift in Sources */,
 				1CC2EE222714639F007D63F5 /* LegoArtFilterDemoApp.swift in Sources */,
+				36E935A9275E3D70000F1586 /* FileSaveView_macOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +419,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VJ5N2X84K8;
+				DEVELOPMENT_TEAM = QU378YD9WW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -442,7 +444,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VJ5N2X84K8;
+				DEVELOPMENT_TEAM = QU378YD9WW;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
